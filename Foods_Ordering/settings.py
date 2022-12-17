@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'main.apps.MainConfig',
     'accounts.apps.AccountsConfig',
     'crispy_forms',
+    'captcha',
 ]
 
 MIDDLEWARE = [
@@ -101,7 +102,9 @@ AUTH_PASSWORD_VALIDATORS = [
         'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
     },
 ]
-
+RECAPTCHA_PUBLIC_KEY = '6LekGYgjAAAAAKm4_Prc2M2VkqBcm_E6dywXBFP-'
+RECAPTCHA_PRIVATE_KEY = '6LekGYgjAAAAAHxwJIBls8n_ByZXnPT7zMWbJBrg'
+SILENCED_SYSTEM_CHECKS = ['captcha.recaptcha_test_key_error']
 
 # Internationalization
 # https://docs.djangoproject.com/en/3.0/topics/i18n/
