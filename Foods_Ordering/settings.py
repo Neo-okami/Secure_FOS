@@ -130,3 +130,5 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
+SESSION_COOKIE_SECURE = True
+
