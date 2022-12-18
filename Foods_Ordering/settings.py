@@ -51,6 +51,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'django.middleware.security.SecurityMiddleware',
 ]
 
 ROOT_URLCONF = 'Foods_Ordering.urls'
@@ -133,3 +134,9 @@ CRISPY_TEMPLATE_PACK = 'bootstrap4'
 SESSION_COOKIE_SECURE = True
 
 SESSION_COOKIE_PATH = '/;HttpOnly'
+
+SECURE_BROWSER_XSS_FILTER = True
+
+SECURE_CONTENT_TYPE_NOSNIFF = True
+
+X_FRAME_OPTIONS = 'DENY'
