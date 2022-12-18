@@ -10,8 +10,8 @@
     <title>Food Ordering System</title>
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-        <a class="navbar-brand" href="/"><h3>Evanz Food Ordering System</h3></a>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-warning">
+        <a class="navbar-brand" href="/"><h3 style="color: black;font-family: Verdana">SWP Food Ordering System</h3></a>
         <button
             class="navbar-toggler"
             type="button"
@@ -27,10 +27,10 @@
             <ul class="navbar-nav mr-auto">
             </ul>
             <ul class="navbar-nav ml-auto">
-                    <li><a href="{% url 'main:home' %}" class="mr-2 text-light">Home</a></li>
+                    <li><a href="{% url 'main:home' %}" class="mr-2 text-dark">Home</a></li>
                 {% if user.is_authenticated %}
                     {% if request.user|has_group:"admin_owner" %} 
-                        <li><a href="{% url 'main:admin_dashboard' %}" class="mr-2 text-light">DashBoard</a></li>
+                        <li><a href="{% url 'main:admin_dashboard' %}" class="mr-2 text-dark">DashBoard</a></li>
                         <li>
                             <form class="logout-link" action="{% url 'accounts:logout' %}" method="post">
                                 {% csrf_token %}
@@ -38,8 +38,8 @@
                             </form>
                         </li> 
                     {% else %}
-                        <li><a href="{% url 'main:cart' %}" class="mr-2 text-light">My Cart🛒</a></li>
-                        <li><a href="{% url 'main:order_details' %}" class="mr-2 text-light">Your Orders</a></li>
+                        <li><a href="{% url 'main:cart' %}" class="mr-2 text-dark">My Cart🛒</a></li>
+                        <li><a href="{% url 'main:order_details' %}" class="mr-2 text-dark">Your Orders</a></li>
                         <li>
                             <form class="logout-link" action="{% url 'accounts:logout' %}" method="post">
                                 {% csrf_token %}
@@ -48,8 +48,8 @@
                         </li>
                     {% endif %}
                 {% else %}
-                    <li><a href="{% url 'accounts:login' %}" class="mr-2 text-light">Login</a></li>
-                    <li><a href="{% url 'accounts:signup' %}" class="mr-2 text-light">SignUp</a></li>
+                    <li><a href="{% url 'accounts:login' %}" class="mr-2 text-dark">Login</a></li>
+                    <li><a href="{% url 'accounts:signup' %}" class="mr-2 text-dark">SignUp</a></li>
                 {% endif %}
             </ul>
         </div>
